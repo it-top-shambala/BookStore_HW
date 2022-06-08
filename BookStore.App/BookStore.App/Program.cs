@@ -21,17 +21,22 @@ namespace BookStore.App
 
             Print(db.Books);
             Console.WriteLine();
-           
+
+            db.Rename("book1", "BOOK1");
 
             //var book = db.Books.First(b => b.Id == 2);
             //db.Books.Remove(book);
             //db.SaveChanges();
             //Print(db.Books);
-            //Console.WriteLine();
+            Console.WriteLine();
             //book = db.Books.First(b => b.NameBook=="book1");
             //book.NameBook = "dfdfdsf";
             //db.SaveChanges();
-           // Print(db.Books);
+            Print(db.Books);
+
+            db.Remove("book0");
+            Console.WriteLine();
+            Print(db.Books);
         }
 
         private static void ADDInitialization (BookCrud db)
