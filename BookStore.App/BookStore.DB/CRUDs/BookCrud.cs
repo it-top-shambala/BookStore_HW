@@ -1,6 +1,7 @@
 ﻿using BookStore.App;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BookStore.DB.CRUDs
@@ -15,6 +16,17 @@ namespace BookStore.DB.CRUDs
             this.SaveChanges();
         }
 
-
+        public void Rename (string name, string newname)
+        {
+            var book = this.Books.First(b => b.NameBook == name);
+            book.NameBook = newname;
+            this.SaveChanges();
+        }
+        public void Remove(string name)
+        {
+            var book = this.Books.First(b => b.NameBook == name);
+            this.Remove(book);
+            this.SaveChanges();
+        }
     }
 }
