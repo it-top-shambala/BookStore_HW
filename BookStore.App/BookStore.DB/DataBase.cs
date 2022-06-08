@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BookStore.DB.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookStore.App
 {
-    public sealed class DataBase : DbContext
+    public abstract class DataBase : DbContext
     {
         public DbSet<Book> Books => Set<Book>();
+        public DbSet<Author> Authors => Set<Author>();
         public DataBase()
         {
             Database.EnsureDeleted();
