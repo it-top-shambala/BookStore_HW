@@ -19,8 +19,8 @@ namespace BookStore.App
             };
             db.ADDBook(book0);
 
-            Print(db.Books);
-            Console.WriteLine();
+          //  Print(db.Books);
+          //  Console.WriteLine();
 
             db.Rename("book1", "BOOK1");
 
@@ -28,14 +28,14 @@ namespace BookStore.App
             //db.Books.Remove(book);
             //db.SaveChanges();
             //Print(db.Books);
-            Console.WriteLine();
+          //  Console.WriteLine();
             //book = db.Books.First(b => b.NameBook=="book1");
             //book.NameBook = "dfdfdsf";
             //db.SaveChanges();
-            Print(db.Books);
+          //  Print(db.Books);
 
             db.Remove("book0");
-            Console.WriteLine();
+            //  Console.WriteLine();
             Print(db.Books);
         }
 
@@ -70,7 +70,42 @@ namespace BookStore.App
             var author4 = new Author("Mikhail", "Yurjevich", "Lermontov", book4);
 
             db.Authors.AddRange(author1, author2, author3, author4);
-              
+
+            var genre1 = new Genre("Сomedy",  book1);
+            var genre2 = new Genre("Сomedy",  book2);
+            var genre3 = new Genre("Fantasy",  book3);
+            var genre4 = new Genre("Fantasy",  book4);
+
+            db.Genres.AddRange(genre1, genre2, genre3, genre4);
+
+            var cost1 = new Buyprice(1250);
+            var cost2 = new Buyprice(1300);
+            var cost3 = new Buyprice(2250);
+            var cost4 = new Buyprice(1000);
+
+            db.Buyprices.AddRange(cost1, cost2, cost3, cost4);
+
+            var sale1 = new Saleprice(1350);
+            var sale2 = new Saleprice(1400);
+            var sale3 = new Saleprice(2550);
+            var sale4 = new Saleprice(1100);
+
+            db.Saleprices.AddRange(sale1, sale2, sale3, sale4);
+
+            var edition1 = new Edition("Edition1", 100, 1877, book1, cost1, sale1);
+            var edition2 = new Edition("Edition2", 200, 1879, book2, cost2, sale2);
+            var edition3 = new Edition("Edition3", 250, 1894, book3, cost3, sale3);
+            var edition4 = new Edition("Edition4", 150, 1900, book4, cost4, sale4);
+
+            db.Editions.AddRange(edition1, edition2, edition3, edition4);
+
+            var publ1 = new Publishing("Issuer1", edition1);
+            var publ2 = new Publishing("Issuer2", edition2);
+            var publ3 = new Publishing("Issuer3", edition3);
+            var publ4 = new Publishing("Issuer4", edition4);
+
+            db.Publishings.AddRange(publ1, publ2, publ3, publ4);
+
             db.SaveChanges();
         }
 
@@ -84,8 +119,14 @@ namespace BookStore.App
                 if (book.Author == null) continue;
                 
                     Console.WriteLine($"{book.Author.Firstname} {book.Author.Patronymic} {book.Author.Lastname}");
-                
+
+                if (book.Genre == null) continue;
+                     Console.WriteLine($"{book.Genre.Genrename} ");
+                Console.WriteLine($"{book.Edition.Editionname} {book.Edition.Year} ");
+                Console.WriteLine($"{book.Edition.publishing.PublishingName} ");
                
+                //Console.WriteLine($"{book.Edition.buyprice} / {book.Edition.saleprice}");
+
             }
         }
 

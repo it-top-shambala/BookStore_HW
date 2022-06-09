@@ -10,6 +10,12 @@ namespace BookStore.App
     {
         public DbSet<Book> Books => Set<Book>();
         public DbSet<Author> Authors => Set<Author>();
+        public DbSet<Genre> Genres => Set<Genre>();
+        public DbSet<Buyprice> Buyprices => Set<Buyprice>();
+        public DbSet<Saleprice> Saleprices => Set<Saleprice>();
+        public DbSet<Edition> Editions => Set<Edition>();
+        public DbSet<Publishing> Publishings => Set<Publishing>();
+      
         public DataBase()
         {
             Database.EnsureDeleted();
@@ -20,6 +26,6 @@ namespace BookStore.App
         {
             optionsBuilder.UseSqlite("Data Source=books.db");
         }
-
+        
     }
 }
