@@ -1,0 +1,28 @@
+﻿<Window x:Class="BookStoreWPF.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookStoreWPF.App"
+        mc:Ignorable="d"
+        Title="BookStore" Height="450" Width="800"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <StackPanel>
+        <Label Content="BookStore:"/>
+        <ListView x:Name="ListBooks"  ItemsSource="{Binding}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding NameBook}">NameBook</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Author.Patronymic}">Autor</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Genre.Genrename}">Genre</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="totalbooks" Content="Total books in stock" 
+                Width="150" Height="50"
+                Click="totalbooks_Click"></Button>
+        <Button x:Name ="amountbooks" Content="Amount of books"
+                Width="150" Height="50"
+                Click="amountbooks_Click"></Button>
+    </StackPanel>
+</Window>
