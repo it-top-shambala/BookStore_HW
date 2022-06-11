@@ -15,7 +15,7 @@ namespace BookStore.DB.Models
         public string PublishingName { get; set; }
         [Column("edition_id")]
         public int EditionId { get; set; }
-        public Edition? Edition { get; set; }
+        public Edition Edition { get; set; }
         public Publishing() { }
 
         public Publishing(string publishingName, Edition edition)
