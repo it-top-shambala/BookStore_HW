@@ -16,9 +16,9 @@ namespace BookStore.App
         
         [Column("amount")]
         public int Amount { get; set; }
-        public Author? Author { get; set; }
-        public Genre? Genre { get; set; }
-        public Edition? Edition { get; set; }
+        public Author Author { get; set; }
+        public Genre Genre { get; set; }
+        public Edition Edition { get; set; }
         public Book() { }
         public Book(string namebook, int amount)
         {
