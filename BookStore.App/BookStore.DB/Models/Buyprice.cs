@@ -13,15 +13,18 @@ namespace BookStore.DB.Models
         [Column ("buyprice")]
         public int Price { get; set; }
 
-        public Edition? Edition { get; set; }
+        [Column("edition_id")]
+        public int EditionId { get; set; }
+        public Edition Edition { get; set; }
 
         public Buyprice()
         {
         }
 
-        public Buyprice(int buyprice)
+        public Buyprice(int buyprice, Edition edition)
         {
-            Price = buyprice;   
+            Price = buyprice;
+            Edition = edition;
         }
     }
 }
