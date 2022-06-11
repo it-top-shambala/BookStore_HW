@@ -19,7 +19,7 @@ namespace BookStore.DB.Models
         public string Patronymic { get; set; }
         [Column("book_id")]
         public int BookId { get; set; }
-        public Book? Book { get; set; }
+        public Book Book { get; set; }
         public Author() { }
 
         public Author(string firstname, string lastname, string patronymic, Book book)
