@@ -28,5 +28,10 @@ namespace BookStore.DB.CRUDs
             this.Remove(book);
             this.SaveChanges();
         }
+
+        public IEnumerable<Book> GetAllNameBooks(IEnumerable<Book> books)
+        {
+            return books;
+        }
     }
 }
