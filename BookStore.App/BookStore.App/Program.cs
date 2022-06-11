@@ -2,7 +2,6 @@
 using BookStore.DB.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace BookStore.App
 {
@@ -36,7 +35,8 @@ namespace BookStore.App
 
             db.Remove("book0");
             //  Console.WriteLine();
-            Print(db.Books);
+            //Print(db.Books);
+           
         }
 
         private static void ADDInitialization (BookCrud db)
