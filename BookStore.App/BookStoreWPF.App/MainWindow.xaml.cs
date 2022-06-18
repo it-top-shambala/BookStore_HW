@@ -111,7 +111,6 @@ namespace BookStoreWPF.App
             foreach (var book in listbook)
             {
                 total += book.Amount;
-               // MessageBox.Show(book.Amount.ToString());
             }
             MessageBox.Show($"Total books in stock {total}");
         }
