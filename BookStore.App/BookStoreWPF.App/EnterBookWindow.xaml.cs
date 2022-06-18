@@ -12,9 +12,7 @@ using System.Windows.Shapes;
 
 namespace BookStoreWPF.App
 {
-    /// <summary>
-    /// Логика взаимодействия для EnterBookWindow.xaml
-    /// </summary>
+    
     public partial class EnterBookWindow : Window
     {
         public EnterBookWindow()
