@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="BookStore" Height="450" Width="800"
         DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Window.Resources>
+        <ResourceDictionary Source="Styles.xaml"/>
+    </Window.Resources>
     <StackPanel>
         <Label Content="BookStore:"/>
         <ListView x:Name="ListBooks"  ItemsSource="{Binding}">
@@ -19,10 +22,10 @@
             </ListView.View>
         </ListView>
         <Button x:Name="totalbooks" Content="Total books in stock" 
-                Width="150" Height="50"
+                Style="{StaticResource StyleButton}"
                 Click="totalbooks_Click"></Button>
         <Button x:Name ="amountbooks" Content="Amount of books"
-                Width="150" Height="50"
+                Style="{StaticResource StyleButton}"
                 Click="amountbooks_Click"></Button>
     </StackPanel>
 </Window>
