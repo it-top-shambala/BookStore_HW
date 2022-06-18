@@ -6,27 +6,26 @@ using System.Text;
 
 namespace BookStore.DB.CRUDs
 {
-    public class BookCrud : DataBase
+    public class BookCrud
     {
-        public BookCrud () : base() { }
-        public void ADDBook(Book book)
+        public BookCrud() : base() { }
+        public void ADDBook(DataBase dbBook, Book book)
         {
-           this.Books.Add(book);
-          
-            this.SaveChanges();
+            dbBook.Add(book);
+            dbBook.SaveChanges();
         }
 
-        public void Rename (string name, string newname)
+        public void Rename (DataBase dbBook, string name, string newname)
         {
-            var book = this.Books.First(b => b.NameBook == name);
+            var book = dbBook.Books.First(b => b.NameBook == name);
             book.NameBook = newname;
-            this.SaveChanges();
+            dbBook.SaveChanges();
         }
-        public void Remove(string name)
+        public void Remove(DataBase dbBook, string name)
         {
-            var book = this.Books.First(b => b.NameBook == name);
-            this.Remove(book);
-            this.SaveChanges();
+            var book = dbBook.Books.First(b => b.NameBook == name);
+            dbBook.Books.Remove(book);
+            dbBook.SaveChanges();
         }
 
         public IEnumerable<Book> GetAllNameBooks(IEnumerable<Book> books)
