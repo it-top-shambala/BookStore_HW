@@ -13,19 +13,19 @@ namespace BookStore.DB.Models
         
         public int Id { get; set; }
 
-        [Column ("genrename")]
-        public string Genrename { get; set; }
+        [Column ("genre_name")]
+        public string GenreName { get; set; }
         [Column("book_id")]
         public int BookId { get; set; }
-        public Book? Book { get; set; }
+        public Book Book { get; set; }
 
         public Genre()
         {
         }
 
-        public Genre(string genrename, Book book)
+        public Genre(string genre_name, Book book)
         {
-            Genrename = genrename;
+            GenreName = genre_name;
             Book = book;
         }
     }

@@ -10,7 +10,7 @@ namespace BookStore.DB.Models
     {
         [Column("id")]
         public int Id { get; set; }
-        [Column("saleprice")]
+        [Column("sale_price")]
         public int Price { get; set; }
         [Column("edition_id")]
         public int EditionId { get; set; }

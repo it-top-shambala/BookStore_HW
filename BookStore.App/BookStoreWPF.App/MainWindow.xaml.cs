@@ -87,10 +87,10 @@ namespace BookStoreWPF.App
             var publ4 = new Publishing("Issuer4", edition4);
 
             db.Publishings.AddRange(publ1, publ2, publ3, publ4);
-            var cost1 = new Buyprice(1250, edition1);
-            var cost2 = new Buyprice(1300, edition2);
-            var cost3 = new Buyprice(2250, edition3);
-            var cost4 = new Buyprice(1000, edition4);
+            var cost1 = new BuyPrice(1250, edition1);
+            var cost2 = new BuyPrice(1300, edition2);
+            var cost3 = new BuyPrice(2250, edition3);
+            var cost4 = new BuyPrice(1000, edition4);
 
             db.Buyprices.AddRange(cost1, cost2, cost3, cost4);
 

@@ -16,7 +16,7 @@ namespace BookStore.App
         public DbSet<Edition> Editions => Set<Edition>();
         public DbSet<Publishing> Publishings => Set<Publishing>();
         public DbSet<Saleprice> Saleprices => Set<Saleprice>();
-        public DbSet<Buyprice> Buyprices => Set<Buyprice>();
+        public DbSet<BuyPrice> Buyprices => Set<BuyPrice>();
         public DataBase()
         {
             Database.EnsureDeleted();

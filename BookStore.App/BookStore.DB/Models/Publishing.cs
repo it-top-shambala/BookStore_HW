@@ -11,16 +11,16 @@ namespace BookStore.DB.Models
     {
         [Column("id")]
         public int Id { get; set; }
-        [Column("publishingnname")]
+        [Column("publishingn_name")]
         public string PublishingName { get; set; }
         [Column("edition_id")]
         public int EditionId { get; set; }
         public Edition Edition { get; set; }
         public Publishing() { }
 
-        public Publishing(string publishingName, Edition edition)
+        public Publishing(string publishing_name, Edition edition)
         {
-            PublishingName = publishingName;
+            PublishingName = publishing_name;
             Edition = edition;
         }
     }

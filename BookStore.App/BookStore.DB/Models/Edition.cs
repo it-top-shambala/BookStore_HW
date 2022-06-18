@@ -11,23 +11,23 @@ namespace BookStore.DB.Models
     {
         [Column("id")]
         public int Id { get; set; }
-        [Column ("editionname")]
-        public string Editionname { get; set; }
+        [Column ("edition_name")]
+        public string EditionName { get; set; }
         [Column("pages")]
         public int Pages { get; set; }
         [Column("year")]
         public int Year { get; set; }
         public Publishing Publishing { get; set; }
-        public Buyprice Buyprice { get; set; }
-        public Saleprice Saleprice { get; set; }
+        public BuyPrice BuyPrice { get; set; }
+        public Saleprice SalePrice { get; set; }
         public int BookId { get; set; }
         public Book Book { get; set; }
 
         public Edition() { }
 
-        public Edition(string editionname, int pages, int year, Book book)
+        public Edition(string edition_name, int pages, int year, Book book)
         {
-            Editionname = editionname;
+            EditionName = edition_name;
             Pages = pages;
             Year = year;
             Book = book;

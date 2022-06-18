@@ -11,7 +11,7 @@ namespace BookStore.App
     {
         [Column ("id")]
         public int Id { get; set; }
-        [Column("namebook")]
+        [Column("name_book")]
         public string NameBook { get; set; }
         
         [Column("amount")]
@@ -20,9 +20,9 @@ namespace BookStore.App
         public Genre Genre { get; set; }
         public Edition Edition { get; set; }
         public Book() { }
-        public Book(string namebook, int amount)
+        public Book(string name_book, int amount)
         {
-            NameBook = namebook;
+            NameBook = name_book;
             Amount = amount;
         }
     }

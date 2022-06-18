@@ -11,10 +11,10 @@ namespace BookStore.DB.Models
     {
         [Column ("id")]
         public int Id { get; set; }
-        [Column("firstname")]
-        public string Firstname { get; set; }
-        [Column("lastname")]
-        public string Lastname { get; set; }
+        [Column("first_name")]
+        public string FirstName { get; set; }
+        [Column("last_name")]
+        public string LastName { get; set; }
         [Column("patronymic")]
         public string Patronymic { get; set; }
         [Column("book_id")]
@@ -22,10 +22,10 @@ namespace BookStore.DB.Models
         public Book Book { get; set; }
         public Author() { }
 
-        public Author(string firstname, string lastname, string patronymic, Book book)
+        public Author(string first_name, string last_name, string patronymic, Book book)
         {
-            Firstname = firstname;
-            Lastname = lastname;
+            FirstName = first_name;
+            LastName = last_name;
             Patronymic = patronymic;
             Book = book;
         }

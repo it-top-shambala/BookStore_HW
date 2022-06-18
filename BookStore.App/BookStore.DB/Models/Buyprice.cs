@@ -6,24 +6,24 @@ using System.Text;
 namespace BookStore.DB.Models
 {
     [Table ("tab_buyprice")]
-    public class Buyprice
+    public class BuyPrice
     {
         [Column ("id")]
         public int Id { get; set; }
-        [Column ("buyprice")]
+        [Column ("buy_price")]
         public int Price { get; set; }
 
         [Column("edition_id")]
         public int EditionId { get; set; }
         public Edition Edition { get; set; }
 
-        public Buyprice()
+        public BuyPrice()
         {
         }
 
-        public Buyprice(int buyprice, Edition edition)
+        public BuyPrice(int buy_price, Edition edition)
         {
-            Price = buyprice;
+            Price = buy_price;
             Edition = edition;
         }
     }
