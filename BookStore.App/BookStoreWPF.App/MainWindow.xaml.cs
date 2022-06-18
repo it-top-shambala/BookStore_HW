@@ -27,13 +27,14 @@ namespace BookStoreWPF.App
         public MainWindow()
         {
             InitializeComponent();
-            var db = new BookCrud();
+            var db = new DataBase();
             ADDInitialization(db);
             db.Books.Load();
-            this.DataContext = db.Books.Local.ToBindingList();
+            DataContext = db.Books.Local.ToBindingList();
+
         }
 
-        private static void ADDInitialization(BookCrud db)
+        private static void ADDInitialization(DataBase db)
         {
             var book1 = new Book()
             {
@@ -104,26 +105,33 @@ namespace BookStoreWPF.App
             db.SaveChanges();
         }
 
-        private void totalbooks_Click(object sender, RoutedEventArgs e)
+        private void TotalBooks_Click(object sender, RoutedEventArgs e)
         {
-            var listbook = ListBooks.ItemsSource as IEnumerable<Book>;
+            var listBook = ListBooks.ItemsSource as IEnumerable<Book>;
             var total = 0;
-            foreach (var book in listbook)
+            foreach (var book in listBook)
             {
                 total += book.Amount;
             }
             MessageBox.Show($"Total books in stock {total}");
         }
 
-        private void amountbooks_Click(object sender, RoutedEventArgs e)
+        private void AmountBooks_Click(object sender, RoutedEventArgs e)
         {
             if (ListBooks.SelectedItem == null)
             {
                 MessageBox.Show("Book not selected");
-                return; 
+                return;
             }
             Book book = ListBooks.SelectedItem as Book;
             MessageBox.Show($"Amount {book.NameBook} in stock {book.Amount.ToString()} pieces");
         }
+
+        private void AddBook_Click(object sender, RoutedEventArgs e)
+        {
+            EnterBookWindow enterBook = new EnterBookWindow();
+            enterBook.Show();
+        }
+
     }
 }

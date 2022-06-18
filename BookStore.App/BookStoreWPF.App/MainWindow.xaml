@@ -21,11 +21,14 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="totalbooks" Content="Total books in stock" 
+        <Button x:Name="totalBooks" Content="Total books in stock" 
                 Style="{StaticResource StyleButton}"
-                Click="totalbooks_Click"></Button>
-        <Button x:Name ="amountbooks" Content="Amount of books"
+                Click="TotalBooks_Click"/>
+        <Button x:Name ="amountBooks" Content="Amount of books"
                 Style="{StaticResource StyleButton}"
-                Click="amountbooks_Click"></Button>
+                Click="AmountBooks_Click"/>
+        <Button x:Name="addBook" Content ="Add a book"
+                Style="{StaticResource StyleButton}"
+                Click="AddBook_Click"/>
     </StackPanel>
 </Window>

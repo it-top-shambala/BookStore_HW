@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookStore.App
 {
-    public abstract class DataBase : DbContext
+    public class DataBase : DbContext
     {
         public DbSet<Book> Books => Set<Book>();
         public DbSet<Author> Authors => Set<Author>();
